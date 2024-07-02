@@ -292,6 +292,10 @@ describe Gon do
   end
 
   describe '#check_for_rabl_and_jbuilder' do
+    before do
+      module ::Rails; end
+      allow(Rails).to receive_message_chain("application.routes.url_helpers.instance_methods") { [:user_path] }
+    end
 
     let(:controller) { ActionController::Base.new }
 

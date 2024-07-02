@@ -6,6 +6,9 @@ describe Gon do
       before do
         Gon.clear
         controller.instance_variable_set('@objects', objects)
+
+        module ::Rails; end
+        allow(Rails).to receive_message_chain("application.routes.url_helpers.instance_methods") { [:user_path] }
       end
 
       let(:controller) { ActionController::Base.new }
