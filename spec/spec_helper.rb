@@ -3,11 +3,11 @@ require 'rails/railtie'
 # And it checks version of rails. I've decided to configure jbuilder for rails v4
 module Rails
   module VERSION
-    MAJOR = 4
+    MAJOR = 6
   end
 
   def self.version
-    '4.2.0'
+    '6.1.7.8'
   end
 end
 
